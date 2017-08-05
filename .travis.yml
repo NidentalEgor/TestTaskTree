@@ -1,0 +1,25 @@
+language: cpp
+sudo: required
+
+compiler:
+  - gcc
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+
+before_install:
+  - pip install --user cpp-coveralls
+
+script:
+  - mkdir build
+  - cd build
+  - mkdir Linux
+  - cd Linux
+  - cmake ../..
+  - make
+  - ./Tests
+  
+after_success:
+  - coveralls --root ../.. -E ".*TestTaskTree.*"
