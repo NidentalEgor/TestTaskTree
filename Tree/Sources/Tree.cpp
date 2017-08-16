@@ -1,6 +1,7 @@
 ﻿#include <fstream>
 #include <iostream>
 #include <queue>
+#include <algorithm>
 #include "Exceptions.h"
 #include "Tree.h"
 
@@ -31,7 +32,7 @@ void Tree::Serialize(const std::string& output_file_path) const
 
 		const BaseNodeConstContainerPtr current_node_links =
 				current_node->GetLinks();
-		
+
 		for (BaseNodeContainer::const_iterator current_node_link = current_node_links->begin()
 			; current_node_link != current_node_links->end()
 			; ++current_node_link)

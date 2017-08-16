@@ -4,6 +4,7 @@
 
 #include <map>
 #include <typeindex>
+#include <fstream>
 #include "BaseNode.h"
 #include "Exceptions.h"
 
@@ -55,7 +56,7 @@ template <typename T>
 class Node : public BaseNode
 {
 public:
-	
+
 	/*!
 	* Конструктор.
 	*/
@@ -121,7 +122,7 @@ BaseNodeConstContainerPtr Node<T>::GetLinks() const
 template <typename T>
 void Node<T>::Serialize(std::ofstream& output_stream) const
 {
-	const NodeValueType node_value_type = 
+	const NodeValueType node_value_type =
 			ConvertTypeIdToNodeValueType(typeid(T));
 
 	output_stream << static_cast<int>(node_value_type) <<

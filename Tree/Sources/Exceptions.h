@@ -11,7 +11,7 @@ class OpenFileException : public std::exception
 {
 public:
 	OpenFileException(const std::string& invalid_file_name);
-	char const* what() const override;
+	char const* what() const noexcept;
 
 private:
 	std::string invalid_file_name_;
@@ -24,6 +24,10 @@ class InvalidNodeTypeException : public std::exception
 {
 public:
 	InvalidNodeTypeException();
+	char const* what() const noexcept;
+
+private:
+	std::string message_;
 };
 
 /*!
@@ -33,6 +37,10 @@ class InvalidTreeException : public std::exception
 {
 public:
 	InvalidTreeException();
+	char const* what() const noexcept;
+
+private:
+	std::string message_;
 };
 
 #endif // EXCEPTION_H_INCLUDED

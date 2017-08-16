@@ -75,8 +75,8 @@ protected:
 TEST_F(TreeTest, OneNodeTreeTest)
 {
 	TreeProcessingTest(
-			R"(../../../../Tests/ResourceFiles/TreeTests/OneNodeTreetest/input.txt)",
-			R"(../../../../Tests/ResourceFiles/TreeTests/OneNodeTreetest/output.txt)",
+			R"(../../../../Tests/ResourceFiles/TreeTests/OneNodeTreeTest/input.txt)",
+			R"(../../../../Tests/ResourceFiles/TreeTests/OneNodeTreeTest/output.txt)",
 			"Input and output files are different.");
 }
 
@@ -91,6 +91,5 @@ TEST_F(TreeTest, BigTreeTest)
 int main(int argc, char** argv)
 {
 	testing::InitGoogleTest(&argc, argv);
-	RUN_ALL_TESTS();
-	std::getchar();
+	return RUN_ALL_TESTS();
 }
